@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xitomeiras | O pior blog do palmeiras</title>
+    <style>
+        /* Estilos Globais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #006437;
+            color: #333;
+            line-height: 1.6;
+        }
+        a {
+            text-decoration: none;
+            color: #e63946;
+        }
+        
+        /* Cabeçalho e Navegação */
+        header {
+            background-color: #1d3557;
+            color: #fff;
+            padding: 1rem 0;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            overflow: hidden;
+        }
+        header h1 {
+            float: left;
+            font-size: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        header h1 span {
+            color: #e63946;
+        }
+        nav {
+            float: right;
+            margin-top: 10px;
+        }
+        nav ul {
+            list-style: none;
+        }
+        nav ul li {
+            display: inline;
+            margin-left: 20px;
+        }
+        nav ul li a {
+            color: #fff;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        nav ul li a:hover {
+            color: #e63946;
+        }
+
+        /* Layout Principal */
+        .main-content {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 20px auto;
+            gap: 20px;
+        }
+        .articles {
+            flex: 3;
+        }
+        .sidebar {
+            flex: 1;
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* Artigos */
+        .featured-article {
+            background: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .featured-article img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .featured-article h2 {
+            margin: 15px 0;
+            color: #1d3557;
+        }
+        
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .news-card {
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .news-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        .news-card h3 {
+            font-size: 1.2rem;
+            margin: 10px 0;
+            color: #1d3557;
+        }
+        .btn {
+            display: inline-block;
+            background: #e63946;
+            color: #fff;
+            padding: 8px 15px;
+            margin-top: 10px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        .btn:hover {
+            background: #c1121f;
+            color: #fff;
+        }
+
+        /* Barra Lateral */
+        .sidebar h3 {
+            border-bottom: 2px solid #e63946;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            color: #1d3557;
+        }
+        .score-item {
+            background: #f1faee;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-left: 4px solid #1d3557;
+            font-weight: bold;
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: #1d3557;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+        /* Responsividade */
+        @media(max-width: 768px) {
+            header h1, nav {
+                float: none;
+                text-align: center;
+            }
+            nav {
+                margin-top: 15px;
+            }
+            nav ul li {
+                display: block;
+                margin: 10px 0;
+            }
+            .main-content {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Xitomeiras <span></span></h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Início</a></li>
+                    <li><a href="#">Memes</a></li>
+                    <li><a href="#">Icons</a></li>
+                    <li><a href="#">Notícias</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container main-content">
+        
+        <section class="articles">
+            <article class="featured-article">
+                <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Futebol Destaque">
+                <h2>Final Eletrizante: O campeão foi decidido no último minuto!</h2>
+                <p>Em um jogo de tirar o fôlego, a equipe da casa conseguiu uma virada histórica nos acréscimos, garantindo o troféu da temporada diante de um estádio lotado. O técnico elogiou a resiliência do time e a torcida fez a festa nas ruas da cidade até o amanhecer.</p>
+                <a href="#" class="btn">Leia a matéria completa</a>
+            </article>
+
+            <div class="news-grid">
+                <article class="news-card">
+                    <img src="https://images.unsplash.com/photo-1504450758481-7338eba7524a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Basquete">
+                    <h3>Astro do Basquete bate recorde de pontos na liga</h3>
+                    <p>O jogador superou a marca histórica na noite de ontem, marcando 60 pontos em uma única partida.</p>
+                    <a href="#" class="btn">Ver mais</a>
+                </article>
+                <article class="news-card">
+                    <img src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Tênis">
+                    <h3>Zebra em Wimbledon: Favorito é eliminado na 1ª rodada</h3>
+                    <p>O número 1 do mundo foi surpreendido por um estreante de 19 anos em uma partida épica de 5 sets.</p>
+                    <a href="#" class="btn">Ver mais</a>
+                </article>
+                <article class="news-card">
+                    <img src="https://images.unsplash.com/photo-1533658688406-896db805b8a0?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Fórmula 1">
+                    <h3>Mercado da F1: Nova troca de pilotos anunciada</h3>
+                    <p>A escuderia confirmou a contratação do piloto veterano para a próxima temporada de 2027.</p>
+                    <a href="#" class="btn">Ver mais</a>
+                </article>
+            </div>
+        </section>
+
+        <aside class="sidebar">
+            <h3>Resultados de Hoje</h3>
+            <div class="score-item">
+                <p>A</p>
+            </div>
+            <div class="score-item">
+                <p>A</p>
+            </div>
+            <div class="score-item">
+                <p>A</p>
+            </div>
+
+            <br>
+            <h3>Tópicos em Alta</h3>
+            <ul>
+                <li><a href="#">#ChampionsLeague</a></li>
+                <li><a href="#">#NBAFinals</a></li>
+                <li><a href="#">#MercadoDaBola</a></li>
+                <li><a href="#">#Olimpiadas</a></li>
+            </ul>
+        </aside>
+
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Xitomeiras. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
