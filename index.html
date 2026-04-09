@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xitomeiras | O pior blog do palmeiras</title>
+    <title>Shitmeiras | O pior blog do palmeiras</title>
     <style>
         /* Estilos Globais */
         * {
@@ -13,62 +13,75 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         body {
-            background-color: #006437;
+            background-color: #eafaf1; /* Verde bem claro para o fundo */
             color: #333;
             line-height: 1.6;
         }
         a {
             text-decoration: none;
-            color: #e63946;
+            color: #006437;
         }
         
-        /* Cabeçalho e Navegação */
+        /* Cabeçalho e Navegação (Abas) */
         header {
-            background-color: #1d3557;
+            background-color: #006437; /* Verde Palmeiras */
             color: #fff;
-            padding: 1rem 0;
+            padding-top: 1.5rem;
+            border-bottom: 5px solid #fff; /* Detalhe branco separando o topo */
         }
         .container {
             width: 90%;
             max-width: 1200px;
             margin: auto;
             overflow: hidden;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end; /* Alinha as abas na parte inferior do header */
         }
         header h1 {
-            float: left;
             font-size: 2rem;
             text-transform: uppercase;
             letter-spacing: 2px;
+            margin-bottom: 10px;
         }
         header h1 span {
-            color: #e63946;
+            color: #fff;
         }
-        nav {
-            float: right;
-            margin-top: 10px;
-        }
+        
+        /* Estilo das Abas */
         nav ul {
             list-style: none;
+            display: flex;
+            margin-bottom: -5px; /* Puxa as abas para cobrir a borda inferior */
         }
         nav ul li {
-            display: inline;
-            margin-left: 20px;
+            margin-left: 5px;
         }
         nav ul li a {
+            display: block;
+            background-color: #004d2a; /* Verde mais escuro para a aba inativa */
             color: #fff;
             font-weight: bold;
             text-transform: uppercase;
+            padding: 10px 20px;
+            border-radius: 8px 8px 0 0; /* Arredonda apenas as pontas de cima */
+            transition: all 0.3s ease;
+            border: 1px solid #004d2a;
+            border-bottom: none;
         }
         nav ul li a:hover {
-            color: #e63946;
+            background-color: #eafaf1; /* Cor do fundo do site para mesclar a aba */
+            color: #006437;
+            border-color: #fff;
         }
 
         /* Layout Principal */
         .main-content {
             display: flex;
             flex-wrap: wrap;
-            margin: 20px auto;
+            margin: 30px auto;
             gap: 20px;
+            align-items: flex-start; /* Conserta o alinhamento do header flex */
         }
         .articles {
             flex: 3;
@@ -78,7 +91,8 @@
             background: #fff;
             padding: 20px;
             border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-top: 4px solid #006437;
         }
 
         /* Artigos */
@@ -87,16 +101,19 @@
             padding: 20px;
             margin-bottom: 20px;
             border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-top: 4px solid #006437;
         }
         .featured-article img {
             width: 100%;
             height: auto;
+            max-height: 400px;
+            object-fit: cover;
             border-radius: 5px;
         }
         .featured-article h2 {
             margin: 15px 0;
-            color: #1d3557;
+            color: #006437;
         }
         
         .news-grid {
@@ -108,7 +125,8 @@
             background: #fff;
             padding: 15px;
             border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-top: 3px solid #006437;
         }
         .news-card img {
             width: 100%;
@@ -119,58 +137,71 @@
         .news-card h3 {
             font-size: 1.2rem;
             margin: 10px 0;
-            color: #1d3557;
+            color: #004d2a;
         }
         .btn {
             display: inline-block;
-            background: #e63946;
+            background: #006437;
             color: #fff;
             padding: 8px 15px;
             margin-top: 10px;
             border-radius: 3px;
             font-weight: bold;
+            transition: background 0.3s;
         }
         .btn:hover {
-            background: #c1121f;
+            background: #004d2a;
             color: #fff;
         }
 
         /* Barra Lateral */
         .sidebar h3 {
-            border-bottom: 2px solid #e63946;
+            border-bottom: 2px solid #006437;
             padding-bottom: 10px;
             margin-bottom: 15px;
-            color: #1d3557;
+            color: #006437;
         }
         .score-item {
-            background: #f1faee;
+            background: #f4fdf6;
             padding: 10px;
             margin-bottom: 10px;
-            border-left: 4px solid #1d3557;
+            border-left: 4px solid #006437;
             font-weight: bold;
+            color: #333;
+        }
+        .sidebar ul {
+            list-style: none;
+        }
+        .sidebar ul li {
+            margin-bottom: 8px;
         }
 
         /* Rodapé */
         footer {
-            background-color: #1d3557;
+            background-color: #004d2a;
             color: #fff;
             text-align: center;
             padding: 20px 0;
             margin-top: 40px;
+            border-top: 5px solid #006437;
         }
 
         /* Responsividade */
         @media(max-width: 768px) {
-            header h1, nav {
-                float: none;
-                text-align: center;
+            .container {
+                flex-direction: column;
+                align-items: center;
             }
-            nav {
-                margin-top: 15px;
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                margin-bottom: 0;
             }
             nav ul li {
-                display: block;
-                margin: 10px 0;
+                margin: 5px;
+            }
+            nav ul li a {
+                border-radius: 5px; /* Em telas menores, abas viram botões normais */
             }
             .main-content {
                 flex-direction: column;
@@ -182,13 +213,13 @@
 
     <header>
         <div class="container">
-            <h1>Xitomeiras <span></span></h1>
+            <h1>Xitomeiras</h1>
             <nav>
                 <ul>
                     <li><a href="#">Início</a></li>
                     <li><a href="#">Memes</a></li>
                     <li><a href="#">Icons</a></li>
-                    <li><a href="#">Notícias</a></li>
+                    <li><a href="#">Cornetas</a></li>
                     <li><a href="#">Contato</a></li>
                 </ul>
             </nav>
@@ -199,53 +230,54 @@
         
         <section class="articles">
             <article class="featured-article">
-                <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Futebol Destaque">
-                <h2>Final Eletrizante: O campeão foi decidido no último minuto!</h2>
-                <p>Em um jogo de tirar o fôlego, a equipe da casa conseguiu uma virada histórica nos acréscimos, garantindo o troféu da temporada diante de um estádio lotado. O técnico elogiou a resiliência do time e a torcida fez a festa nas ruas da cidade até o amanhecer.</p>
+                <img src="https://images.unsplash.com/photo-1518605368461-1e1e11411516?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Estádio de Futebol">
+                <h2>Abel Ferreira chuta mais um microfone e assusta gândula no Allianz Parque</h2>
+                <p>O treinador palmeirense não perdoou o equipamento de captação de áudio após uma falta não marcada no meio de campo. A diretoria já estuda uma parceria com uma fábrica de microfones para reduzir os custos da temporada.</p>
                 <a href="#" class="btn">Leia a matéria completa</a>
             </article>
 
             <div class="news-grid">
                 <article class="news-card">
-                    <img src="https://images.unsplash.com/photo-1504450758481-7338eba7524a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Basquete">
-                    <h3>Astro do Basquete bate recorde de pontos na liga</h3>
-                    <p>O jogador superou a marca histórica na noite de ontem, marcando 60 pontos em uma única partida.</p>
+                    <img src="https://images.unsplash.com/photo-1489944440615-453fc2b6a9a9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Jogador em campo">
+                    <h3>Rony tenta bicicleta da intermediária</h3>
+                    <p>Atacante palmeirense ignora a distância e tenta finalização acrobática da entrada da área defensiva. A bola caiu no estacionamento.</p>
                     <a href="#" class="btn">Ver mais</a>
                 </article>
                 <article class="news-card">
-                    <img src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Tênis">
-                    <h3>Zebra em Wimbledon: Favorito é eliminado na 1ª rodada</h3>
-                    <p>O número 1 do mundo foi surpreendido por um estreante de 19 anos em uma partida épica de 5 sets.</p>
+                    <img src="https://images.unsplash.com/photo-1551280857-2b9bbe5260fc?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Torcida">
+                    <h3>Torcida quebra o porquinho para o clássico</h3>
+                    <p>Com os ingressos nas alturas, torcedores relatam ter vendido até a geladeira para acompanhar o time fora de casa.</p>
                     <a href="#" class="btn">Ver mais</a>
                 </article>
                 <article class="news-card">
-                    <img src="https://images.unsplash.com/photo-1533658688406-896db805b8a0?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Fórmula 1">
-                    <h3>Mercado da F1: Nova troca de pilotos anunciada</h3>
-                    <p>A escuderia confirmou a contratação do piloto veterano para a próxima temporada de 2027.</p>
+                    <img src="https://images.unsplash.com/photo-1574629810360-7efbb1925536?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Gramado">
+                    <h3>A polêmica do gramado sintético</h3>
+                    <p>Adversário reclama que a bola quicou rápido demais. Diretoria rebate: "O choro é livre, mas o gramado é nosso".</p>
                     <a href="#" class="btn">Ver mais</a>
                 </article>
             </div>
         </section>
 
         <aside class="sidebar">
-            <h3>Resultados de Hoje</h3>
+            <h3>Últimos Resultados</h3>
             <div class="score-item">
-                <p>A</p>
+                <p>Palmeiras 2 x 0 Rival</p>
             </div>
             <div class="score-item">
-                <p>A</p>
+                <p>Palmeiras 1 x 1 Time Retranqueiro</p>
             </div>
             <div class="score-item">
-                <p>A</p>
+                <p>Time do Var 0 x 1 Palmeiras</p>
             </div>
 
             <br>
             <h3>Tópicos em Alta</h3>
             <ul>
-                <li><a href="#">#ChampionsLeague</a></li>
-                <li><a href="#">#NBAFinals</a></li>
-                <li><a href="#">#MercadoDaBola</a></li>
-                <li><a href="#">#Olimpiadas</a></li>
+                <li><a href="#">#AvantiPalestra</a></li>
+                <li><a href="#">#AbelFica</a></li>
+                <li><a href="#">#Porco</a></li>
+                <li><a href="#">#AllianzParque</a></li>
+                <li><a href="#">#ContrataDiretoria</a></li>
             </ul>
         </aside>
 
@@ -253,7 +285,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 Xitomeiras. Todos os direitos reservados.</p>
+            <p>&copy; 2026 Xitomeiras. Todos os direitos reservados. O pior (e mais verde) blog do Verdão.</p>
         </div>
     </footer>
 
